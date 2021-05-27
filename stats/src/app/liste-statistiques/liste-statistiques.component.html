@@ -1,0 +1,9 @@
+<div class="stats">
+  <app-statistique
+      (deleteEvent)="deleteStat($event)"
+      *ngFor="let statistique of stats"
+      [statistique]="statistique"
+      appBordure
+      [appreciation]="statistique.appreciation"
+    ></app-statistique>
+</div>

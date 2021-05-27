@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StatistiqueService } from '../services/statistique.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class FormulaireComponent implements OnInit {
   public valeur!: string;
   public appreciation!: string;
 
-  constructor(private api: StatistiqueService) { }
+  constructor(private api: StatistiqueService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -23,7 +24,9 @@ export class FormulaireComponent implements OnInit {
       value: this.valeur,
       appreciation: this.appreciation
     }
-    this.api.postStat(data);
+    this.api.postStat(data).then(() => {
+      this.router.navigate(["liste"])
+    })
   }
 
 }

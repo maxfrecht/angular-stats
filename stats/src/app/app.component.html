@@ -1,11 +1,9 @@
-<div class="stats">
-  <app-statistique
-    (deleteEvent)="deleteStat($event)"
-    *ngFor="let statistique of stats"
-    [statistique]="statistique"
-    appBordure
-    [appreciation]="statistique.appreciation"
-  ></app-statistique>
-</div>
-<app-formulaire></app-formulaire>
+<nav>
+  <h1>STATS</h1>
+  <ul>
+    <li routerLink="liste">Liste des statistiques</li>
+    <li routerLink="form">Formulaire</li>
+  </ul>
+</nav>
+
 <router-outlet></router-outlet>

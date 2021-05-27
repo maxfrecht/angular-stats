@@ -1,7 +1,27 @@
 <form #addStat="ngForm" (ngSubmit)="handleSubmit()">
   <h3>Ajouter une statistique</h3>
-  <input type="text" name="titre" [(ngModel)]="titre" placeholder="titre">
-  <input type="text" name="valeur" [(ngModel)]="valeur" placeholder="valeur">
-  <input type="text" name="appreciation" [(ngModel)]="appreciation" placeholder="appreciation">
-  <button class="btn"type="submit">Valider</button>
+  <input
+    type="text"
+    name="titre"
+    [(ngModel)]="titre"
+    placeholder="titre"
+    required
+  />
+  <input
+    type="text"
+    name="valeur"
+    [(ngModel)]="valeur"
+    placeholder="valeur"
+    required
+  />
+  <input
+    type="text"
+    name="appreciation"
+    [(ngModel)]="appreciation"
+    placeholder="appreciation"
+    required
+  />
+  <button class="btn" type="submit" [disabled]="!addStat.form.valid">
+    Valider
+  </button>
 </form>

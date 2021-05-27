@@ -31,7 +31,7 @@ export class BordureDirective implements OnInit {
 
   @HostListener('mouseenter')
   onMouseEnter() {
-    this.el.nativeElement.style.border = `.2rem solid ${this.color}`;
+    this.el.nativeElement.style.border = `.5rem solid ${this.color}`;
   }
   @HostListener('mouseleave')
   onMouseLeave() {
