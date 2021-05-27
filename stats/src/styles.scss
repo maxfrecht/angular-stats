@@ -17,3 +17,19 @@ body {
   font-size: 1.6rem;
   color: #333;
 }
+
+.btn {
+  max-width: 10rem;
+  padding: 1rem 1rem;
+  border: 0;
+  border-radius: 0.3rem;
+  background: rgb(42, 161, 42);
+  color: #f1f1f1;
+  cursor: pointer;
+  transition: max-width 0.2s ease;
+  margin-top: 1rem;
+
+  &:hover {
+    max-width: 11rem;
+  }
+}

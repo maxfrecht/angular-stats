@@ -29,6 +29,16 @@ export class StatistiqueService {
         .then(() => {
           let indexDeleted = this.stats.findIndex(s => s.id === stat.id);
           this.stats.splice(indexDeleted, 1);
-        })
+        }, e => e)
+  }
+
+  postStat(data: Object): Promise<Statistique> {
+    return this.http.post(this.URL, data)
+            .toPromise()
+              .then((posted:any) => {
+                let newStat = new Statistique(posted.id, posted.title, posted.value, posted.appreciation);
+                this.stats.push(newStat);
+                return newStat;
+              }, e => e)
   }
 }

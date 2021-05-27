@@ -11,17 +11,5 @@
 }
 
 .delete {
-  max-width: 10rem;
-  padding: 1rem 1rem;
-  border: 0;
-  border-radius: 0.3rem;
   background: rgb(212, 71, 71);
-  color: #f1f1f1;
-  cursor: pointer;
-  transition: padding 0.2s ease;
-  margin-top: 1rem;
-
-  &:hover {
-    padding: 1rem 1.5rem;
-  }
 }
