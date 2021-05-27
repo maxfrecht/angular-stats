@@ -7,10 +7,11 @@ import { Statistique } from '../models/statistique';
 })
 export class StatistiqueService {
   public stats!: Statistique[];
+  public URL: string = "https://stats.naminilamy.fr/";
   constructor(private http:HttpClient) { }
 
   getStats(): Promise<Statistique[]> {
-    return this.http.get("https://stats.naminilamy.fr/")
+    return this.http.get(this.URL)
             .toPromise()
               .then((data:any) => {
                 let statsTab:Statistique[] = [];
@@ -20,5 +21,14 @@ export class StatistiqueService {
                 this.stats = statsTab;
                 return statsTab;
               }, e => e)
+  }
+
+  deleteStat(stat: Statistique) {
+    this.http.delete(this.URL + stat.id)
+      .toPromise()
+        .then(() => {
+          let indexDeleted = this.stats.findIndex(s => s.id === stat.id);
+          this.stats.splice(indexDeleted, 1);
+        })
   }
 }

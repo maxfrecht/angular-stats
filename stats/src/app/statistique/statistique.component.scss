@@ -2,7 +2,26 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 0 .5rem rgba(0, 0, 0, .3);
+  border-radius: .5rem;
 }
 .appreciation {
   font-style: italic;
+}
+
+.delete {
+  max-width: 10rem;
+  padding: 1rem 1rem;
+  border: 0;
+  border-radius: 0.3rem;
+  background: rgb(212, 71, 71);
+  color: #f1f1f1;
+  cursor: pointer;
+  transition: padding 0.2s ease;
+  margin-top: 1rem;
+
+  &:hover {
+    padding: 1rem 1.5rem;
+  }
 }

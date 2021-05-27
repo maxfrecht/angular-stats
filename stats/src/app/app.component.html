@@ -1,3 +1,5 @@
-<app-statistique *ngFor="let statistique of stats" [statistique]="statistique"></app-statistique>
+<div class="stats">
+  <app-statistique (deleteEvent)="deleteStat($event)" *ngFor="let statistique of stats" [statistique]="statistique"></app-statistique>
+</div>
 
 <router-outlet></router-outlet>

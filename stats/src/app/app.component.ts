@@ -15,4 +15,8 @@ export class AppComponent {
       this.stats = statsTab;
     });
   }
+
+  deleteStat(stat: Statistique) {
+    this.api.deleteStat(stat)
+  }
 }
